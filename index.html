@@ -162,7 +162,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     font-size: 14px;
     transition: 0.3s;
-	gap: 15px;
+	gap: 10px;
 }
 .card {
     border: 5px solid transparent;
@@ -170,6 +170,19 @@ body {
                 linear-gradient(90deg, #1e2a78, #3a4bdc) border-box;
     border-radius: 25px;
 	padding: 10px;   /* কম রাখো যাতে লেখা border এর কাছ থেকে শুরু হয় */
+    box-sizing: border-box;
+}
+.card {
+    width: 49%;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card {
+    width: 48%;
     box-sizing: border-box;
 }
 .card h3 {
@@ -231,7 +244,14 @@ body {
     display: flex;
     gap: 10px;
 }
-
+.card {
+    border: 3px solid #1e2a78;  /* increase thickness */
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+.card {
+    box-shadow: none; /* OR very light */
+}
 .value {
     word-break: break-word;
     overflow-wrap: break-word;
@@ -368,7 +388,7 @@ function downloadPDF() {
         filename: 'PUST_Assignment.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: { 
-            scale: 3,
+            scale: 4,
             useCORS: true
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
