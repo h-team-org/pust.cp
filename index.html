@@ -82,7 +82,7 @@ body {
 /* BADGE */
 .badge {
     display: inline-block;
-    background: linear-gradient(90deg, #ed1e79, #ed1e79);
+    background: linear-gradient(90deg, #8e0f3a, #8e0f3a);
     color: white;
     padding: 8px 18px;
     border-radius: 8px;   /* square but soft edges */
@@ -117,7 +117,9 @@ body {
     text-indent: -140px;   /* pull first line left */
     padding-left: 155px;   /* align all lines after ":" */
 }
-
+.value {
+    word-break: break-word;
+}
 /* CARDS */
 .cards {
     display: flex;
@@ -156,18 +158,18 @@ body {
     background: #ffffff;
     padding: 20px;
     width: 50%;   /* IMPORTANT (320px না) */
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     font-size: 14px;
     transition: 0.3s;
 	gap: 15px;
 }
 .card {
-    border: 2px solid transparent;
+    border: 5px solid transparent;
     background: linear-gradient(#fff, #fff) padding-box,
                 linear-gradient(90deg, #1e2a78, #3a4bdc) border-box;
-    border-radius: 10px;
-	padding: 7px;   /* কম রাখো যাতে লেখা border এর কাছ থেকে শুরু হয় */
+    border-radius: 25px;
+	padding: 10px;   /* কম রাখো যাতে লেখা border এর কাছ থেকে শুরু হয় */
     box-sizing: border-box;
 }
 .card h3 {
@@ -207,7 +209,7 @@ body {
     padding: 0;
 }
 .date {
-    color: #ed1e79;
+    color: #8e0f3a;
     font-weight: 600;
 }
 .info-table {
@@ -219,6 +221,20 @@ body {
 .info-table td {
     text-align: left; 
 	vertical-align: top;
+}
+.card {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+}
+
+.value {
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 /* BUTTON */
 .btn {
@@ -256,19 +272,11 @@ body {
 	</div>
 
     <div style="text-align:center;"><br>
-	<div class="assignment"contenteditable="true"> ASSIGNMENT </div><br><br>
+	<div class="assignment"contenteditable="true">&nbsp;ASSIGNMENT &nbsp;</div><br>
         <div class="badge" contenteditable="true">Course Code :  </div><br>
-        <div class="badge" contenteditable="true">Course Title : </div><br>
-
-        
-    </div>
-
+        <div class="badge" contenteditable="true">Course Title : </div>
     <div class="assignment-name">
-
-    <b>Assignment Name : </b>
-    
-    <span contenteditable="true"></span>
-
+    <span class="value" contenteditable="true">Assignment Name :&nbsp;</span>
 </div>
 
     <div class="cards">
