@@ -82,24 +82,24 @@ body {
 /* BADGE */
 .badge {
     display: inline-block;
-    background: #ff6a00;
+    background: linear-gradient(90deg, #ed1e79, #ed1e79);
     color: white;
     padding: 8px 18px;
-    border-radius: 25px;
+    border-radius: 8px;   /* square but soft edges */
     margin: 8px;
     font-size: 13px;
 }
 
 /* ASSIGNMENT */
 .assignment {
-    background: white;
     display: inline-block;
-    padding: 8px 25px;
-    border-radius: 10px;
-    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 6px;
+    background: #f4f6ff;   /* very light blue */
     color: #1e2a78;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    margin-top: -35px;
+    border-left: 4px solid #3a4bdc; /* small color touch */
+	border-right: 4px solid #3a4bdc;
+    font-weight: 600;
 }
 
 /* BOX */
@@ -120,9 +120,9 @@ body {
 /* CARDS */
 .cards {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap; /* IMPORTANT */
 }
 /* HEADER LOGO (normal top logo) */
 .logo-box {
@@ -150,19 +150,43 @@ body {
 .watermark img {
     width: 650px;  
 }
+
 .card {
-    background: white;
-    padding: 8px;
-    width: 315px;  
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    background: #ffffff;
+    padding: 20px;
+    width: 50%;   /* IMPORTANT (320px না) */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     font-size: 14px;
+    transition: 0.3s;
+	gap: 15px;
+}
+.card {
+    border: 2px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(90deg, #1e2a78, #3a4bdc) border-box;
+    border-radius: 10px;
+	padding: 7px;   /* কম রাখো যাতে লেখা border এর কাছ থেকে শুরু হয় */
+    box-sizing: border-box;
+}
+.card h3 {
+    background: linear-gradient(90deg, #1e2a78, #3a4bdc);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 0;
 }
 
-.card h3 {
-    border-bottom: 2px dashed #ccc;
-    padding-bottom: 5px;
-    margin-top: 0;
+.info-table td {
+    padding: 2px 2px;
+    font-size: 14px;
+	vertical-align: top;
+}
+
+.label {
+    font-weight: 600;
+    color: #1e2a78;
 }
 
 /* FOOTER */
@@ -175,24 +199,14 @@ body {
     border-collapse: collapse;
 }
 
-.info-table td {
-    padding: 0px 2px;  
-    vertical-align: top;
-    font-size: 14px;
-    line-height: 1.5;
-}
 
-.label {
-    width: 95px; 
-    font-weight: 500;
-}
 
 .colon {
     width: 2px;   
     padding: 0;
 }
 .date {
-    color: #ff6a00;
+    color: #ed1e79;
     font-weight: 600;
 }
 .info-table {
@@ -203,6 +217,7 @@ body {
 
 .info-table td {
     text-align: left; 
+	vertical-align: top;
 }
 /* BUTTON */
 .btn {
@@ -241,7 +256,7 @@ body {
 
     <div style="text-align:center;"><br>
 	<div class="assignment"contenteditable="true">ASSIGNMENT ON</div><br><br>
-        <div class="badge" contenteditable="true">Course Code : ICE - </div><br>
+        <div class="badge" contenteditable="true">Course Code :  </div><br>
         <div class="badge" contenteditable="true">Course Title : </div><br>
 
         
