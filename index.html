@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PUST Assignment Cover</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #eaeaea;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+.logo-box {
+    margin: auto;
+}
+.container {
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+    background: white;
+
+    padding: 12.7mm;
+    box-sizing: border-box;
+
+    position: relative;
+    left: 3px;
+    overflow: hidden;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 10mm;
+    left: 10mm;
+    right: 10mm;
+    bottom: 10mm;
+
+    border: 4px solid #1e2a78;
+    pointer-events: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+/* LOGO FIX (JPG friendly) */
+.logo-box {
+    width: 120px;
+    height: 120px;
+}
+
+.logo {
+    width: 105%;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.title {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+/* BADGE */
+.badge {
+    display: inline-block;
+    background: #ff6a00;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    margin: 8px;
+    font-size: 13px;
+}
+
+/* ASSIGNMENT */
+.assignment {
+    background: white;
+    display: inline-block;
+    padding: 8px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #1e2a78;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    margin-top: -35px;
+}
+
+/* BOX */
+.assignment-name {
+    width: 75%;
+    margin: 20px auto;
+    background: #eee;
+    padding: 12px;
+    border-left: 6px solid #1e2a78;
+    font-size: 14px;
+    text-align: left;
+}
+.assignment-name {
+    text-indent: -140px;   /* pull first line left */
+    padding-left: 155px;   /* align all lines after ":" */
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+/* HEADER LOGO (normal top logo) */
+.logo-box {
+    width: 180px;
+    height: 200px;
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 51.22%;
+    transform: translate(-50%, -50%);
+    opacity: 0.07;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.watermark img {
+    width: 650px;  
+}
+.card {
+    background: white;
+    padding: 8px;
+    width: 315px;  
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    font-size: 14px;
+}
+
+.card h3 {
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* FOOTER */
+.footer {
+    margin: 25px;
+    font-size: 14px;
+}
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 0px 2px;  
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.label {
+    width: 95px; 
+    font-weight: 500;
+}
+
+.colon {
+    width: 2px;   
+    padding: 0;
+}
+.date {
+    color: #ff6a00;
+    font-weight: 600;
+}
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;  
+}
+
+.info-table td {
+    text-align: left; 
+}
+/* BUTTON */
+.btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 25px;
+    background: #1e2a78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="btn" onclick="downloadPDF()">Download PDF</button>
+
+<div class="container" id="pdfContent">
+<div class="watermark">
+    <img src="pust_logo.jpg">
+</div>
+
+    <div class="header">
+        
+		<div style="text-align:center;"><br><br>
+        <div class="title" >PABNA UNIVERSITY OF SCIENCE AND TECHNOLOGY</div>
+        <div class="subtitle"contenteditable="true">Department of Information & Communication Engineering</div>
+		<div style="logo-align:center;"><br>
+		<div class="logo-box">
+            <img src="pust_logo.jpg" class="logo">
+        </div><br><br>
+	</div>
+
+    <div style="text-align:center;"><br>
+	<div class="assignment"contenteditable="true">ASSIGNMENT ON</div><br><br>
+        <div class="badge" contenteditable="true">Course Code : ICE - </div><br>
+        <div class="badge" contenteditable="true">Course Title : </div><br>
+
+        
+    </div>
+
+    <div class="assignment-name">
+
+    <b>Assignment Name : </b>
+    
+    <span contenteditable="true"></span>
+
+</div>
+
+    <div class="cards">
+
+    <!-- SUBMITTED BY -->
+    <div class="card">
+        <h3>SUBMITTED BY</h3>
+
+        <table class="info-table">
+            <tr>
+                <td class="label">Name</td>
+                <td>:</td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class="label">Roll No</td>
+                <td>:</td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class="label">Session</td>
+                <td>:</td>
+                <td contenteditable="true">2023–2024</td>
+            </tr>
+            <tr>
+                <td class="label">Department</td>
+                <td>:</td>
+                <td contenteditable="true">
+                    Information and Communication Engineering
+                </td>
+            </tr>
+            <tr>
+                <td class="label">University</td>
+                <td>:</td>
+                <td>
+                    Pabna University of Science and Technology
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- SUBMITTED TO -->
+    <div class="card">
+        <h3>SUBMITTED TO</h3>
+
+        <table class="info-table">
+            <tr>
+                <td class="label">Name</td>
+                <td>:</td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class="label">Designation</td>
+                <td>:</td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class="label">Department</td>
+                <td>:</td>
+                <td contenteditable="true">
+                    Information and Communication Engineering
+                </td>
+            </tr>
+            <tr>
+                <td class="label">University</td>
+                <td>:</td>
+                <td>
+                    Pabna University of Science and Technology
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+    <div class="footer">
+              Date of Submission: <span class="date"contenteditable="true"></span>
+    </div>
+
+</div>
+
+<script>
+function downloadPDF() {
+    const element = document.getElementById("pdfContent");
+
+    const opt = {
+        margin: 0,
+        filename: 'PUST_Assignment.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { 
+            scale: 3,
+            useCORS: true
+        },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>
